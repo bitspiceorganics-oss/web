@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Bitspice Organics — Semi-dark Export Theme</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-grid">
+    <a class="brand" href="#home">
+      <img src="logo.png" alt="Bitspice" class="logo">
+      <div class="brand-text">
+        <h1>Bitspice Organics</h1>
+        <p class="muted">Pure Spices & Superfoods — Assam, India</p>
+      </div>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#home">Home</a>
+      <a href="#trending">Trending</a>
+      <a href="#best">Best Sellers</a>
+      <a href="#regional">Regional</a>
+      <a href="#superfoods">Superfoods</a>
+      <a href="#new">New Arrivals</a>
+      <a href="#export">Export Quality</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="btn small">Contact</a>
+    </nav>
+    <div class="search-wrap">
+      <input id="search" placeholder="Search products, e.g. 'turmeric'..." />
+      <button id="searchClear" title="Clear">×</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <h2>Export-grade spices & superfoods — sustainably sourced from Assam</h2>
+        <p class="lead">We partner with smallholder farmers to bring you high-curcumin turmeric, authentic Bhut Jolokia (Ghost Pepper), fragrant Joha rice, and more — lab-tested and export-ready.</p>
+        <div class="hero-ctas">
+          <a class="btn primary" href="#catalog">Explore Catalog</a>
+          <a class="btn ghost" href="#contact">Request Quote</a>
+        </div>
+
+        <div class="why">
+          <h4>Why buyers choose us</h4>
+          <ul>
+            <li>Transparent sourcing & batch-level traceability</li>
+            <li>Certificates on request — COA, microbiology, mycotoxin reports</li>
+            <li>Flexible packaging & private label</li>
+          </ul>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="hero-cover.jpg" alt="Assorted spices and packaging">
+      </div>
+    </div>
+  </section>
+
+  <!-- Sections with 9 products each: trending, best, regional, superfoods, new -->
+  <!-- Template for product grids -->
+  <template id="product-section-template">
+    <section class="section products-section">
+      <div class="container">
+        <div class="section-head">
+          <h3 class="section-title"></h3>
+          <p class="section-desc"></p>
+        </div>
+        <div class="grid grid-3x3" data-section-key="">
+          <!-- product cards injected here -->
+        </div>
+      </div>
+    </section>
+  </template>
+
+  <!-- Sections will be rendered by script for maintainability -->
+
+  <!-- Export Quality -->
+  <section id="export" class="section alt export">
+    <div class="container">
+      <div class="section-head">
+        <h3>Export Quality & Compliance</h3>
+        <p>We follow strict protocols for export packaging, lab tests, and documentation to make customs clearance and buyer inspections smooth.</p>
+      </div>
+      <div class="export-grid">
+        <div>
+          <h4>Certificates</h4>
+          <ul>
+            <li>COA & lab analysis (moisture, aflatoxin, pesticides)</li>
+            <li>Phytosanitary & export documentation</li>
+            <li>GMP-aligned packing and handling</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Packaging</h4>
+          <p>We offer 20–50 kg bulk sacks with liners, retail pouches from 100 g to 1 kg, and fully customized private label options including barcode and multilingual labels.</p>
+        </div>
+        <div>
+          <h4>Logistics</h4>
+          <p>We assist with FOB/CIF pricing, consolidated LCL shipments, and documentation for major import destinations including EU, USA, Gulf, and East Asia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section about">
+    <div class="container">
+      <div class="section-head">
+        <h3>About Bitspice Organics</h3>
+        <p>Founded in Assam with a mission to uplift smallholder farmers and deliver premium spices to global markets.</p>
+      </div>
+      <div class="about-grid">
+        <div>
+          <h4>Our Vision</h4>
+          <p>To be the trusted bridge between northeastern India’s unique agricultural heritage and global buyers seeking traceable, high-quality spices.</p>
+        </div>
+        <div>
+          <h4>Our Team</h4>
+          <p>Export professionals with experience in QA, supply chain, and international compliance. We work closely with agronomists and lab partners.</p>
+        </div>
+        <div>
+          <h4>Sustainability</h4>
+          <p>Supporting regenerative practices, fair pricing, and community development programs in sourcing regions.</p>
+        </div>
+      </div>
+      <div class="more-text">
+        <p>We handle sample requests, run third-party lab tests on demand, and provide flexible MOQs based on the SKU. For exact COA or buyer-specific tests, contact us and we will provide documentation within 48–72 hours for most requests.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / CTA -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <div class="section-head">
+        <h3>Get the Best Deals</h3>
+        <p>Tell us your target products, quantities, and destination port — we'll respond with prices, MOQ, and lead times.</p>
+      </div>
+      <form id="contactForm" class="contact-form">
+        <div class="form-grid">
+          <label><input name="name" placeholder="Full name" required></label>
+          <label><input name="company" placeholder="Company / Brand"></label>
+          <label><input name="email" type="email" placeholder="Email" required></label>
+          <label><input name="phone" placeholder="Phone"></label>
+        </div>
+        <label><textarea name="message" placeholder="Products, quantities, packaging, target price, port..." required></textarea></label>
+        <div class="form-actions">
+          <button class="btn primary" type="submit">Request Quote</button>
+          <button class="btn ghost" type="button" id="saveQuote">Save as Draft</button>
+        </div>
+        <p class="muted">This demo form is static. Use integrations (Google Forms, Netlify Forms, Formspree) to collect leads.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Product Modal -->
+  <div id="productModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close">×</button>
+      <div class="modal-body">
+        <img id="modalImage" src="" alt="">
+        <div class="modal-info">
+          <h4 id="modalTitle"></h4>
+          <p id="modalDesc"></p>
+          <p class="modal-price" id="modalPrice"></p>
+          <div class="modal-actions">
+            <button id="addQuote" class="btn primary">Add to Quote</button>
+            <button id="contactSeller" class="btn ghost">Contact Seller</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="copy">&copy; 2025 Bitspice Organics LLP</div>
+    <div class="social">Connect: <span class="muted">email@example.com</span></div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
