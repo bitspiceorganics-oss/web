@@ -159,5 +159,18 @@ document.addEventListener('DOMContentLoaded', ()=>{
     e.preventDefault();
     alert('Thanks — demo only. Integrate a form backend to collect leads.');
   });
+const contactSellerBtn = document.getElementById('contactSeller');
+if (contactSellerBtn) {
+  contactSellerBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    // modalTitle is set in openModal(p)
+    const titleEl = document.getElementById('modalTitle');
+    const productName = titleEl ? titleEl.textContent.trim() : 'your product';
+    const phone = '916001236774';
+    const text = encodeURIComponent(`Hello, I am interested in your product: ${productName}`);
+    const waUrl = `https://wa.me/${phone}?text=${text}`;
+    window.open(waUrl, '_blank');
+  });
+}
 
 });
