@@ -10,12 +10,13 @@ body {
   line-height: 1.6;
   background-color: #fafafa;
   color: #333;
-  padding-bottom: 80px;
+  padding-bottom: 80px; /* for footer space */
 }
 
 h2 {
   margin: 20px 0 10px;
   font-size: 1.8rem;
+  color: #2c3e50;
   text-align: center;
 }
 
@@ -76,35 +77,6 @@ header img {
   font-size: 1.1rem;
   padding: 10px;
   color: #2c3e50;
-}
-
-/* ===== Section Themes ===== */
-.trending-section h2 {
-  color: #e67e22;
-  border-bottom: 3px solid #e67e22;
-  display: inline-block;
-  padding-bottom: 4px;
-}
-
-.best-section h2 {
-  color: #27ae60;
-  border-bottom: 3px solid #27ae60;
-  display: inline-block;
-  padding-bottom: 4px;
-}
-
-.regional-section h2 {
-  color: #2980b9;
-  border-bottom: 3px solid #2980b9;
-  display: inline-block;
-  padding-bottom: 4px;
-}
-
-.super-section h2 {
-  color: #8e44ad;
-  border-bottom: 3px solid #8e44ad;
-  display: inline-block;
-  padding-bottom: 4px;
 }
 
 /* ===== Modal ===== */
@@ -208,7 +180,7 @@ button:hover {
   background: #c0392b;
 }
 
-/* ===== Footer ===== */
+/* ===== Footer (optional) ===== */
 footer {
   background: #2c3e50;
   color: #fff;
