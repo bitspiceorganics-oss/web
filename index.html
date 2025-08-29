@@ -187,5 +187,19 @@
 </footer>
 
 <script src="script.js"></script>
+  <script>
+document.querySelectorAll('.contact-seller').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const card = btn.closest('.product-card'); // find product card
+    const productName = card.querySelector('.product-info h3').innerText; // get product name
+    const message = encodeURIComponent(`Hello, I am interested in your product: ${productName}`);
+    const phone = "916001236774";
+    const url = `https://wa.me/${phone}?text=${message}`;
+    window.open(url, "_blank");
+  });
+});
+</script>
+
 </body>
 </html>
