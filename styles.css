@@ -69,32 +69,44 @@ body{
 .card h3{margin:12px;padding:0 12px;font-size:16px}
 .card p{color:var(--muted);padding:0 12px 12px;margin:0}
 
-/* price overlay (only changed block) */
-.card .price{
-  /* use in-flow badge pulled up over the image so it's adaptive */
-  display:block;
-  position:relative;               /* keep it in flow so card layout remains stable */
-  width: max-content;
-  margin: -28px auto 12px;         /* negative top margin pulls the badge up over the image */
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  color: #051018;
-  padding: 8px 16px;
-  text-align: center;
-  border-radius: 20px;
-  font-weight: 700;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
-  font-size: 14px;
-  transition: transform .25s ease, box-shadow .25s ease;
-  z-index: 2;                       /* sits visually above the image */
+/* ========== PRICE BADGE (robust, only changed block) ========== */
+/* More specific selector and !important to override earlier rules */
+.grid-3x3 .card .price,
+.card .price {
+  display: inline-block !important;
+  position: relative !important;            /* keep in normal flow so layout is stable */
+  width: max-content !important;
+  margin: -36px auto 12px !important;       /* negative top margin pulls badge up over the image */
+  padding: 8px 18px !important;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2)) !important;
+  color: #051018 !important;
+  text-align: center !important;
+  border-radius: 22px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6) !important;
+  font-size: 14px !important;
+  transition: transform .22s ease, box-shadow .22s ease !important;
+  z-index: 5 !important;
 }
 
-/* badge hover/interaction */
-.card:hover .price{
-  transform: translateY(-6px) scale(1.06);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.75), 0 0 14px rgba(0,212,255,0.12);
+/* hover/interaction for the badge */
+.grid-3x3 .card:hover .price,
+.card:hover .price {
+  transform: translateY(-6px) scale(1.05) !important;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.75), 0 0 16px rgba(0,212,255,0.12) !important;
 }
 
-/* hover */
+/* lower the overlap slightly on very small screens */
+@media (max-width:560px){
+  .grid-3x3 .card .price,
+  .card .price {
+    margin: -26px auto 10px !important;
+    font-size:13px !important;
+    padding:6px 12px !important;
+  }
+}
+
+/* hover (card) */
 .card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(0,0,0,0.6)}
 
 /* export grid, about */
