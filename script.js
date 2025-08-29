@@ -21,7 +21,7 @@ id:'best',
 title:'Best Sellers',
 desc:'Our most-ordered SKUs globally.',
 products:[
-{id:'b-1',img:'https://raw.githubusercontent.com/bitspiceorganics-oss/web/main/best-cardamom-1.jpg',title:'Cardamom Premium',price:'$24/kg – Free Delivery',desc:'Top-grade green cardamom.'},
+{id:'b-1',img:'https://raw.githubusercontent.com/bitspiceorganics-oss/web/best-cardamom-1.jpg',title:'Cardamom Premium',price:'$24/kg – Free Delivery',desc:'Top-grade green cardamom.'},
 {id:'b-2',img:'https://raw.githubusercontent.com/bitspiceorganics-oss/web/main/best-lakadong-1.jpg',title:'Lakadong Turmeric Fingers',price:'$3.9/kg – Free Delivery',desc:'High color turmeric.'},
 {id:'b-3',img:'https://raw.githubusercontent.com/bitspiceorganics-oss/web/main/best-ghost-1.jpg',title:'Ghost Pepper Powder',price:'$49/kg – Free Delivery',desc:'Smoked and powder options.'},
 {id:'b-4',img:'https://raw.githubusercontent.com/bitspiceorganics-oss/web/main/best-joha-1.jpg',title:'Joha Rice Premium',price:'$2.0/kg – Free Delivery',desc:'Premium aromatic rice.'},
