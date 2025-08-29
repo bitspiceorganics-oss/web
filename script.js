@@ -17,21 +17,21 @@ const sectionsData = [
     ]
   },
   {
-    id:'best',
-    title:'Best Sellers',
-    desc:'Our most-ordered SKUs globally.',
-    products:[
-      {id:'b-1',img:'web/best-cardamom-1.jpg',title:'Cardamom Premium',price:'$24/kg – Free Delivery',desc:'Top-grade green cardamom.'},
-      {id:'b-2',img:'web/best-lakadong-1.jpg',title:'Lakadong Turmeric Fingers',price:'$3.9/kg – Free Delivery',desc:'High color turmeric.'},
-      {id:'b-3',img:'web/best-ghost-1.jpg',title:'Ghost Pepper Powder',price:'$49/kg – Free Delivery',desc:'Smoked and powder options.'},
-      {id:'b-4',img:'web/best-joha-1.jpg',title:'Joha Rice Premium',price:'$2.0/kg – Free Delivery',desc:'Premium aromatic rice.'},
-      {id:'b-5',img:'web/best-blackgram-1.jpg',title:'Black Gram Split',price:'$2.8/kg – Free Delivery',desc:'Split urad dal for processors.'},
-      {id:'b-6',img:'web/best-cinnamon-1.jpg',title:'Cinnamon Sticks',price:'$15/kg – Free Delivery',desc:'Hand-selected sticks.'},
-      {id:'b-7',img:'web/best-cloves-1.jpg',title:'Cloves (Export)',price:'$18/kg – Free Delivery',desc:'Cleaned and dried.'},
-      {id:'b-8',img:'web/best-star-1.jpg',title:'Star Anise (Bulk)',price:'$12/kg – Free Delivery',desc:'Uniform sizing.'},
-      {id:'b-9',img:'web/best-bay-1.jpg',title:'Bay Leaf Whole',price:'$5/kg – Free Delivery',desc:'Aromatic bay leaf.'},
-    ]
-  },
+id:'best',
+title:'Best Sellers',
+desc:'Our most-ordered SKUs globally.',
+products:[
+{id:'b-1',img:'https://raw.githubusercontent.com/bitspiceorganics-oss/web/main/best-cardamom-1.jpg',title:'Cardamom Premium',price:'$24/kg – Free Delivery',desc:'Top-grade green cardamom.'},
+{id:'b-2',img:'https://raw.githubusercontent.com/bitspiceorganics-oss/web/main/best-lakadong-1.jpg',title:'Lakadong Turmeric Fingers',price:'$3.9/kg – Free Delivery',desc:'High color turmeric.'},
+{id:'b-3',img:'https://raw.githubusercontent.com/bitspiceorganics-oss/web/main/best-ghost-1.jpg',title:'Ghost Pepper Powder',price:'$49/kg – Free Delivery',desc:'Smoked and powder options.'},
+{id:'b-4',img:'https://raw.githubusercontent.com/bitspiceorganics-oss/web/main/best-joha-1.jpg',title:'Joha Rice Premium',price:'$2.0/kg – Free Delivery',desc:'Premium aromatic rice.'},
+{id:'b-5',img:'https://raw.githubusercontent.com/bitspiceorganics-oss/web/main/best-blackgram-1.jpg',title:'Black Gram Split',price:'$2.8/kg – Free Delivery',desc:'Split urad dal for processors.'},
+{id:'b-6',img:'https://raw.githubusercontent.com/bitspiceorganics-oss/web/main/best-cinnamon-1.jpg',title:'Cinnamon Sticks',price:'$15/kg – Free Delivery',desc:'Hand-selected sticks.'},
+{id:'b-7',img:'https://raw.githubusercontent.com/bitspiceorganics-oss/web/main/best-cloves-1.jpg',title:'Cloves (Export)',price:'$18/kg – Free Delivery',desc:'Cleaned and dried.'},
+{id:'b-8',img:'https://raw.githubusercontent.com/bitspiceorganics-oss/web/main/best-star-1.jpg',title:'Star Anise (Bulk)',price:'$12/kg – Free Delivery',desc:'Uniform sizing.'},
+{id:'b-9',img:'https://raw.githubusercontent.com/bitspiceorganics-oss/web/main/best-bay-1.jpg',title:'Bay Leaf Whole',price:'$5/kg – Free Delivery',desc:'Aromatic bay leaf.'},
+]
+},
   {
     id:'regional',
     title:'Regional Spices',
