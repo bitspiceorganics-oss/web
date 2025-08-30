@@ -172,10 +172,6 @@ if (contactSellerBtn) {
     window.open(waUrl, '_blank');
   });
 }
-function toggleMenu() {
-  // Select the navigation menu and toggle the 'show' class
-  const menu = document.querySelector('.nav');
-  menu.classList.toggle('show');
-}
 
 });
+
