@@ -1,4 +1,3 @@
-
 // Interactive rendering and behavior
 const sectionsData = [
   {
