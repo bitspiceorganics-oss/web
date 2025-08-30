@@ -5,22 +5,21 @@ const sectionsData = [
     title: 'Trending Products',
     desc: 'Popular with buyers this month.',
     products: [
-      {id:'tr-1', img:'trending-ghost-pepper.jpg', title:'Ghost Pepper', price:'$49/kg – Free Delivery', desc:'Authentic Bhut Jolokia, whole and powder.'},
-      {id:'tr-2', img:'trending-lakadong-turmeric.jpg', title:'Lakadong Turmeric', price:'$3.9/kg – Free Delivery', desc:'High curcumin turmeric.'},
-      {id:'tr-3', img:'trending-black-gram.jpg', title:'Black Gram', price:'$2.8/kg – Free Delivery', desc:'Protein-rich pulses.'},
-      {id:'tr-4', img:'trending-cardamom.jpg', title:'Cardamom', price:'$24/kg – Free Delivery', desc:'Aromatic green pods.'},
-      {id:'tr-5', img:'trending-cinnamon.jpg', title:'Cinnamon', price:'$15/kg – Free Delivery', desc:'Premium cinnamon sticks.'},
-      {id:'tr-6', img:'trending-cloves.jpg', title:'Cloves', price:'$18/kg – Free Delivery', desc:'Fragrant cloves for blends.'},
-      {id:'tr-7', img:'trending-star-anise.jpg', title:'Star Anise', price:'$12/kg – Free Delivery', desc:'Distinct licorice flavor.'},
-      {id:'tr-8', img:'trending-joha-rice.jpg', title:'Joha Rice', price:'$1.5/kg – Free Delivery', desc:'Fragrant short-grain rice.'},
-      {id:'tr-9', img:'trending-bay-leaf.jpg', title:'Bay Leaf', price:'$5/kg – Free Delivery', desc:'Classic culinary leaf.'},
+      {id:'tr-1',img:'trending-ghost-pepper.jpg',title:'Ghost Pepper',price:'$49/kg – Free Delivery',desc:'Authentic Bhut Jolokia, whole and powder.'},
+      {id:'tr-2',img:'trending-lakadong-turmeric.jpg',title:'Lakadong Turmeric',price:'$3.9/kg – Free Delivery',desc:'High curcumin turmeric.'},
+      {id:'tr-3',img:'trending-black-gram.jpg',title:'Black Gram',price:'$2.8/kg – Free Delivery',desc:'Protein-rich pulses.'},
+      {id:'tr-4',img:'trending-cardamom.jpg',title:'Cardamom',price:'$24/kg – Free Delivery',desc:'Aromatic green pods.'},
+      {id:'tr-5',img:'trending-cinnamon.jpg',title:'Cinnamon',price:'$15/kg – Free Delivery',desc:'Premium cinnamon sticks.'},
+      {id:'tr-6',img:'trending-cloves.jpg',title:'Cloves',price:'$18/kg – Free Delivery',desc:'Fragrant cloves for blends.'},
+      {id:'tr-7',img:'trending-star-anise.jpg',title:'Star Anise',price:'$12/kg – Free Delivery',desc:'Distinct licorice flavor.'},
+      {id:'tr-8',img:'trending-joha-rice.jpg',title:'Joha Rice',price:'$1.5/kg – Free Delivery',desc:'Fragrant short-grain rice.'},
+      {id:'tr-9',img:'trending-bay-leaf.jpg',title:'Bay Leaf',price:'$5/kg – Free Delivery',desc:'Classic culinary leaf.'},
     ]
   },
-  // Other sections remain unchanged
+  // Other sections data remain unchanged
 ];
 
-// Function to create product cards
-function createProductCard(p) {
+function createProductCard(p){
   const card = document.createElement('div');
   card.className = 'card';
   card.setAttribute('data-id', p.id);
@@ -29,15 +28,15 @@ function createProductCard(p) {
     <div class="price">${p.price}</div>
     <h3>${p.title}</h3>
     <p class="muted">${p.desc}</p>
+    <a href="mailto:bitspiceorganics@gmail.com?subject=${encodeURIComponent(p.title)}&body=${encodeURIComponent(p.desc)}" class="btn primary">Contact via Email</a>
   `;
-  card.addEventListener('click', () => openModal(p));
+  card.addEventListener('click', ()=>openModal(p));
   return card;
 }
 
-// Function to render all sections
-function renderSections() {
+function renderSections(){
   const template = document.getElementById('product-section-template');
-  sectionsData.forEach(sec => {
+  sectionsData.forEach(sec=>{
     const clone = template.content.cloneNode(true);
     const section = clone.querySelector('section');
     section.id = sec.id;
@@ -45,15 +44,14 @@ function renderSections() {
     section.querySelector('.section-desc').textContent = sec.desc;
     const grid = section.querySelector('.grid');
     grid.setAttribute('data-section-key', sec.id);
-    sec.products.forEach(p => {
+    sec.products.forEach(p=>{
       grid.appendChild(createProductCard(p));
     });
     document.querySelector('main').insertBefore(section, document.getElementById('export'));
   });
 }
 
-// Function to open product modal
-function openModal(p) {
+function openModal(p){
   const modal = document.getElementById('productModal');
   modal.setAttribute('open', '');
   document.getElementById('modalImage').src = p.img;
@@ -62,31 +60,38 @@ function openModal(p) {
   document.getElementById('modalPrice').textContent = p.price;
 }
 
-// Function to close product modal
-function closeModal() {
+function closeModal(){
   const modal = document.getElementById('productModal');
   modal.removeAttribute('open');
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', ()=>{
   renderSections();
 
-  document.getElementById('productModal').addEventListener('click', (e) => {
-    if (e.target.classList.contains('modal') || e.target.classList.contains('modal-close')) {
+  // Hamburger Menu Toggle
+  const hamburgerMenu = document.getElementById('hamburgerMenu');
+  const navMenu = document.getElementById('navMenu');
+  
+  hamburgerMenu.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+
+  document.getElementById('productModal').addEventListener('click', (e)=>{
+    if(e.target.classList.contains('modal') || e.target.classList.contains('modal-close')){
       closeModal();
     }
   });
 
-  // Search functionality
+  // Search Functionality
   const searchInput = document.getElementById('search');
   const clearBtn = document.getElementById('searchClear');
-  clearBtn.addEventListener('click', () => { searchInput.value = ''; performSearch(''); });
-  searchInput.addEventListener('input', (e) => performSearch(e.target.value));
+  clearBtn.addEventListener('click', ()=>{ searchInput.value=''; performSearch(''); });
+  searchInput.addEventListener('input', (e)=> performSearch(e.target.value));
 
-  function performSearch(q) {
+  function performSearch(q){
     q = q.trim().toLowerCase();
-    document.querySelectorAll('.grid-3x3').forEach(grid => {
-      grid.querySelectorAll('.card').forEach(card => {
+    document.querySelectorAll('.grid-3x3').forEach(grid=>{
+      grid.querySelectorAll('.card').forEach(card=>{
         const title = card.querySelector('h3').textContent.toLowerCase();
         const desc = card.querySelector('p').textContent.toLowerCase();
         const match = !q || title.includes(q) || desc.includes(q);
@@ -95,13 +100,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Contact form demo handling
-  document.getElementById('contactForm').addEventListener('submit', (e) => {
+  // Contact Form Basic Handling (Demo)
+  document.getElementById('contactForm').addEventListener('submit', (e)=>{
     e.preventDefault();
     alert('Thanks — demo only. Integrate a form backend to collect leads.');
   });
 
-  // WhatsApp contact handling
+  // WhatsApp contact
   const contactSellerBtn = document.getElementById('contactSeller');
   if (contactSellerBtn) {
     contactSellerBtn.addEventListener('click', function (e) {
@@ -114,5 +119,17 @@ document.addEventListener('DOMContentLoaded', () => {
       window.open(waUrl, '_blank');
     });
   }
+
+  // 3x3 grid for mobile
+  const grids = document.querySelectorAll('.grid');
+  grids.forEach(grid => {
+    if (window.innerWidth <= 560) {
+      grid.style.gridTemplateColumns = 'repeat(3, 1fr)';
+    } else if (window.innerWidth <= 900) {
+      grid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+    } else {
+      grid.style.gridTemplateColumns = 'repeat(3, 1fr)';
+    }
+  });
 
 });
