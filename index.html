@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Bitspice Organics — Semi-dark Export Theme</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bitspice Organics — Semi-dark Export Theme</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header class="site-header">
@@ -13,9 +13,12 @@
       <img src="logo.png" alt="Bitspice" class="logo">
       <div class="brand-text">
         <h1>Bitspice Organics</h1>
-        
       </div>
     </a>
+
+    <!-- Hamburger Menu -->
+    <div class="hamburger" onclick="toggleMenu()"></div>
+
     <nav class="nav" aria-label="Primary">
       <a href="#home">Home</a>
       <a href="#trending">Trending</a>
@@ -27,6 +30,7 @@
       <a href="#about">About</a>
       <a href="#contact" class="btn small">Contact</a>
     </nav>
+
     <div class="search-wrap">
       <input id="search" placeholder="Search products, e.g. 'turmeric'..." />
       <button id="searchClear" title="Clear">×</button>
@@ -76,8 +80,6 @@
       </div>
     </section>
   </template>
-
-  <!-- Sections will be rendered by script for maintainability -->
 
   <!-- Export Quality -->
   <section id="export" class="section alt export">
@@ -187,19 +189,6 @@
 </footer>
 
 <script src="script.js"></script>
-  <script>
-document.querySelectorAll('.contact-seller').forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    const card = btn.closest('.product-card'); // find product card
-    const productName = card.querySelector('.product-info h3').innerText; // get product name
-    const message = encodeURIComponent(`Hello, I am interested in your product: ${productName}`);
-    const phone = "916001236774";
-    const url = `https://wa.me/${phone}?text=${message}`;
-    window.open(url, "_blank");
-  });
-});
-</script>
 
 </body>
 </html>
