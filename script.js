@@ -155,10 +155,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
   }
 
   // contact form basic handling (demo)
-  document.getElementById("contactForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-    alert('Thank you for your message');
-  });
+  // document.getElementById("contactForm").addEventListener("submit", function(e) {
+  // e.preventDefault();
+  //   alert('Thank you for your message');
+  // });
 
   // WhatsApp button
   const contactSellerBtn = document.getElementById('contactSeller');
