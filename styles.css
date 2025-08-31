@@ -135,18 +135,99 @@ body{
 .site-footer{padding:22px 0;border-top:1px solid rgba(255,255,255,0.03);margin-top:24px}
 .footer-grid{display:flex;justify-content:space-between;align-items:center}
 .muted{color:var(--muted);font-size:13px}
-/* Contact via Email Button */
-.contact-btn {
-  background-color: var(--accent);  /* your theme accent */
-  color: #fff;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s ease;
+/* Semi-dark theme styles */
+:root{
+  --bg:#0f1720;
+  --panel:#0b1320;
+  --muted:#9aa6b2;
+  --accent:#ff7a18;
+  --accent-2:#00d4ff;
+  --text:#f5f7fa;
+  --card:#182230;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.5;
+}
+a{color:inherit;text-decoration:none;}
+.container{max-width:1200px;margin:0 auto;padding:0 1rem;}
+header{background:var(--panel);padding:1rem 0;position:sticky;top:0;z-index:10;}
+header .logo{font-weight:bold;font-size:1.2rem;color:var(--accent);}
+nav ul{display:flex;list-style:none;gap:1rem;}
+nav ul li a{color:var(--text);transition:.3s;}
+nav ul li a:hover{color:var(--accent);}
+.hero{display:flex;align-items:center;justify-content:center;height:70vh;background:url('hero.jpg') center/cover no-repeat;position:relative;}
+.hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.4);}
+.hero .content{position:relative;text-align:center;color:#fff;}
+.hero h1{font-size:3rem;margin-bottom:1rem;}
+.hero p{font-size:1.2rem;}
+.grid-3x3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;}
+.card{background:var(--card);border-radius:.5rem;overflow:hidden;box-shadow:0 4px 8px rgba(0,0,0,.3);transition:.3s;}
+.card:hover{transform:translateY(-5px);}
+.card img{width:100%;height:200px;object-fit:cover;}
+.card-body{padding:1rem;}
+.card-body h3{margin-bottom:.5rem;color:var(--accent);}
+.card-body p{font-size:.9rem;color:var(--muted);}
+.btn{display:inline-block;padding:.5rem 1rem;border-radius:.3rem;background:var(--accent);color:#fff;font-weight:500;transition:.3s;cursor:pointer;border:none;}
+.btn:hover{background:#e86900;}
+footer{background:var(--panel);padding:2rem;text-align:center;margin-top:2rem;}
+footer p{color:var(--muted);font-size:.9rem;}
+.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;z-index:20;}
+.modal.active{display:flex;}
+.modal-content{background:var(--card);padding:1.5rem;border-radius:.5rem;max-width:500px;width:90%;position:relative;}
+.modal-close{position:absolute;top:.5rem;right:.5rem;font-size:1.5rem;color:var(--muted);cursor:pointer;}
+.search-bar{display:flex;align-items:center;gap:.5rem;margin:1rem 0;}
+.search-bar input{flex:1;padding:.5rem;border:1px solid var(--muted);border-radius:.3rem;background:var(--panel);color:var(--text);}
+.search-bar button{padding:.5rem 1rem;background:var(--accent-2);border:none;border-radius:.3rem;cursor:pointer;color:#fff;transition:.3s;}
+.search-bar button:hover{background:#00b4e0;}
+.contact-form{display:grid;gap:1rem;margin-top:2rem;}
+.contact-form input,.contact-form textarea{padding:.7rem;border:1px solid var(--muted);border-radius:.3rem;background:var(--panel);color:var(--text);}
+.contact-form button{justify-self:start;}
+/* mobile menu */
+.menu-toggle{display:none;cursor:pointer;}
+@media(max-width:768px){
+  nav ul{display:none;flex-direction:column;background:var(--panel);position:absolute;top:60px;left:0;width:100%;padding:1rem;}
+  nav ul.active{display:flex;}
+  .menu-toggle{display:block;color:#fff;font-size:1.5rem;}
 }
 
-.contact-btn:hover {
-  background-color: var(--accent-2);
+/* ✅ Contact Buttons Styling */
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: flex-start;
+}
+
+.contact-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.4rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  border: none;
+  font-size: 0.95rem;
+}
+
+/* Email Button */
+#addQuote.contact-btn {
+  background: var(--accent);
+  color: #fff;
+}
+#addQuote.contact-btn:hover {
+  background: #e86900;
+  transform: translateY(-2px);
+}
+
+/* WhatsApp Button */
+#contactSeller.contact-btn {
+  background: #25d366;
+  color: #fff;
+}
+#contactSeller.contact-btn:hover {
+  background: #1ebd58;
+  transform: translateY(-2px);
 }
