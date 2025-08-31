@@ -172,22 +172,27 @@ if (contactSellerBtn) {
     window.open(waUrl, '_blank');
   });
 }
-  // Contact via Email button
+ function openModal(p){
+  const modal = document.getElementById('productModal');
+  modal.setAttribute('open', '');
+  document.getElementById('modalImage').src = p.img;
+  document.getElementById('modalTitle').textContent = p.title;
+  document.getElementById('modalDesc').textContent = p.desc;
+  document.getElementById('modalPrice').textContent = p.price;
+
+  // 🔑 Add email button listener dynamically here
   const emailBtn = document.getElementById('addQuote');
   if (emailBtn) {
-    emailBtn.addEventListener('click', function (e) {
+    emailBtn.onclick = function (e) {
       e.preventDefault();
-      // Get product name from the modal (set in openModal)
-      const titleEl = document.getElementById('modalTitle');
-      const productName = titleEl ? titleEl.textContent.trim() : 'your product';
-      
+      const productName = p.title;
       const email = "bitspiceorganics@gmail.com";
       const subject = encodeURIComponent(`Inquiry about ${productName}`);
       const body = encodeURIComponent(
         `Hello,\n\nI am interested in your product: ${productName}.\nPlease share more details.\n\nThank you.`
       );
-      
       window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-    });
+    };
   }
+}
 });
