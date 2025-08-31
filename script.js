@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   // contact form basic handling (demo)
   document.getElementById('contactForm').addEventListener('submit', (e)=>{
     e.preventDefault();
-    alert('Thanks — demo only. Integrate a form backend to collect leads.');
+    alert('Thank you for your message');
   });
 const contactSellerBtn = document.getElementById('contactSeller');
 if (contactSellerBtn) {
