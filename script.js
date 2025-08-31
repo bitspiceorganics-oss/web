@@ -155,8 +155,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
   }
 
   // contact form basic handling (demo)
-  document.getElementById('contactForm').addEventListener('submit', (e)=>{
-    e.preventDefault();
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
     alert('Thank you for your message');
   });
 
