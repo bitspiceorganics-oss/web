@@ -145,20 +145,34 @@
         <h3>Get the Best Deals</h3>
         <p>Tell us your target products, quantities, and destination port — we'll respond with prices, MOQ, and lead times.</p>
       </div>
-      <form id="contactForm" class="contact-form">
-        <div class="form-grid">
-          <label><input name="name" placeholder="Full name" required></label>
-          <label><input name="company" placeholder="Company / Brand"></label>
-          <label><input name="email" type="email" placeholder="Email" required></label>
-          <label><input name="phone" placeholder="Phone"></label>
-        </div>
-        <label><textarea name="message" placeholder="Products, quantities, packaging, target price, port..." required></textarea></label>
-        <div class="form-actions">
-          <button class="btn primary" type="submit">Request Quote</button>
-          <button class="btn ghost" type="button" id="saveQuote">Save as Draft</button>
-        </div>
-        <p class="muted">Our team will review your request and get back to you within 1–2 hours with customized pricing, MOQ, and lead times.</p>
-      </form>
+     <form id="contactForm" class="contact-form" 
+      action="https://formspree.io/f/mkgvbppe" 
+      method="POST">
+  <div class="form-grid">
+    <label><input name="name" placeholder="Full name" required></label>
+    <label><input name="company" placeholder="Company / Brand"></label>
+    <label><input name="email" type="email" placeholder="Email" required></label>
+    <label><input name="phone" placeholder="Phone"></label>
+  </div>
+
+  <label>
+    <textarea name="message" placeholder="Products, quantities, packaging, target price, port..." required></textarea>
+  </label>
+
+  <!-- Optional hidden fields -->
+  <input type="hidden" name="_subject" value="New Quote Request from Website">
+  <input type="hidden" name="_redirect" value="https://yourwebsite.com/thank-you.html">
+
+  <div class="form-actions">
+    <button class="btn primary" type="submit">Request Quote</button>
+    <button class="btn ghost" type="button" id="saveQuote">Save as Draft</button>
+  </div>
+
+  <p class="muted">
+    Our team will review your request and get back to you within 1–2 hours with customized pricing, MOQ, and lead times.
+  </p>
+</form>
+
     </div>
   </section>
 
