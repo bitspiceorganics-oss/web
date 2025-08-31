@@ -159,30 +159,33 @@ document.addEventListener('DOMContentLoaded', ()=>{
     e.preventDefault();
     alert('Thank you for your message');
   });
-const contactSellerBtn = document.getElementById('contactSeller');
-if (contactSellerBtn) {
-  contactSellerBtn.addEventListener('click', function (e) {
-    e.preventDefault();
-    // modalTitle is set in openModal(p)
-    const titleEl = document.getElementById('modalTitle');
-    const productName = titleEl ? titleEl.textContent.trim() : 'your product';
-    const phone = '916001236774';
-    const text = encodeURIComponent(`Hello, I am interested in your product: ${productName}`);
-    const waUrl = `https://wa.me/${phone}?text=${text}`;
-    window.open(waUrl, '_blank');
+
+  // WhatsApp button
+  const contactSellerBtn = document.getElementById('contactSeller');
+  if (contactSellerBtn) {
+    contactSellerBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      const titleEl = document.getElementById('modalTitle');
+      const productName = titleEl ? titleEl.textContent.trim() : 'your product';
+      const phone = '916001236774';
+      const text = encodeURIComponent(`Hello, I am interested in your product: ${productName}`);
+      const waUrl = `https://wa.me/${phone}?text=${text}`;
+      window.open(waUrl, '_blank');
+    });
+  }
+
+  // Contact via Email button (event delegation)
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('addQuote')) {
+      e.preventDefault();
+      const productName = document.getElementById('modalTitle').textContent.trim();
+      const email = "bitspiceorganics@gmail.com";
+      const subject = encodeURIComponent(`Inquiry about ${productName}`);
+      const body = encodeURIComponent(
+        `Hello,\n\nI am interested in your product: ${productName}.\nPlease share more details.\n\nThank you.`
+      );
+      window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    }
   });
-}
-// Contact via Email button (global listener)
-document.querySelectorAll('.addQuote').forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    const productName = document.getElementById('modalTitle').textContent.trim();
-    const email = "bitspiceorganics@gmail.com";
-    const subject = encodeURIComponent(`Inquiry about ${productName}`);
-    const body = encodeURIComponent(
-      `Hello,\n\nI am interested in your product: ${productName}.\nPlease share more details.\n\nThank you.`
-    );
-    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-  });
-});
+
 });
