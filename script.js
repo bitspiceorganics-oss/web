@@ -172,5 +172,22 @@ if (contactSellerBtn) {
     window.open(waUrl, '_blank');
   });
 }
+// Contact via Email Button Functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const contactBtn = document.getElementById("contactEmailBtn");
+
+  if (contactBtn) {
+    contactBtn.addEventListener("click", function () {
+      const email = "bitspiceorganics@gmail.com"; // your email
+      const subject = encodeURIComponent("Product Inquiry from Website");
+      const body = encodeURIComponent(
+        "Hello Bitspice Organics Team,\n\nI am interested in the following product:\n\n[Product Name Here]\n\nPlease provide me with more details.\n\nThank you."
+      );
+
+      // mailto link
+      window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    });
+  }
+
 
 });
