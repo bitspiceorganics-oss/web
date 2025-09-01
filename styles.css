@@ -207,42 +207,21 @@ body{
 
 
 
-/* Hero text block fix */
-.hero-text {
-  max-width: 900px;     /* match product grid width */
-  margin: 0 auto;       /* center horizontally */
-  text-align: center;   /* center the text */
-  padding: 2rem 1rem;
-  line-height: 1.6;
-}
-
-.hero-text h1 {
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.hero-text p {
-  font-size: 1.1rem;
-  color: var(--muted);
-  margin-bottom: 1.5rem;
-}
-
-/* Button group */
-.hero-text .btn-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.hero-text .btn-group a {
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 600;
-}
-
-/* Responsive scaling */
+/* Mobile-only hero fix */
 @media (max-width: 600px) {
-  .hero-text h1 { font-size: 1.5rem; }
-  .hero-text p  { font-size: 1rem; }
+  .hero-grid {
+    grid-template-columns: 1fr; /* stack instead of side-by-side */
+    text-align: center;
+  }
+
+  .hero-grid .hero-text {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  .hero-grid img {
+    margin: 0 auto;
+    max-width: 80%;
+  }
 }
