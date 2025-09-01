@@ -53,25 +53,24 @@ body{
 /* Grid 3x3 */
 .grid-3x3 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 14px;
 }
 
 @media (max-width:900px){ 
   .hero-grid { grid-template-columns: 1fr; } 
-  .grid-3x3 { grid-template-columns: repeat(3,1fr); } 
 }
 
 @media (max-width:560px){ 
-  .grid-3x3 { grid-template-columns: repeat(3,1fr); } 
   .search-wrap input { width: 120px; } 
 }
 
-/* Ensure items shrink properly */
+/* Product cards scaling */
 .grid-3x3 .product-card {
   min-width: 0;
   overflow: hidden;
 }
+
 .grid-3x3 img {
   width: 100%;
   height: auto;
