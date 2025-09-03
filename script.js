@@ -229,30 +229,29 @@ function animateProduct() {
   nameEl.style.transition = "none";
   imgEl.style.opacity = "0";
   nameEl.style.opacity = "0";
-  imgEl.style.transform = "translate(200%, -200%) rotate(0deg)";
+  imgEl.style.transform = "translate(200%, -200%)";
   nameEl.style.transform = "translateX(-200%)";
 
-  void imgEl.offsetWidth; // reflow
+  void imgEl.offsetWidth; // trigger reflow
 
-  // Animate name in
-  setTimeout(() => {
-    nameEl.style.transition = "transform 1s ease, opacity 1s ease";
-    nameEl.style.opacity = "1";
-    nameEl.style.transform = "translateX(-50%)"; // centered
-  }, 200);
-
-  // Animate image swinging to center
+  // Animate image to center (swing)
   setTimeout(() => {
     imgEl.style.transition = "transform 1s ease, opacity 1s ease";
     imgEl.style.opacity = "1";
-    imgEl.style.transform = "translate(-50%, -50%) rotate(0deg)";
+    imgEl.style.transform = "translate(-50%, -50%)";
   }, 200);
 
-  // Pause 2s at center
+  // Animate name below image
   setTimeout(() => {
-    // Animate exit - swing to left along semicircle
+    nameEl.style.transition = "transform 1s ease, opacity 1s ease";
+    nameEl.style.opacity = "1";
+    nameEl.style.transform = "translateX(-50%)";
+  }, 200);
+
+  // Pause 2s, then exit
+  setTimeout(() => {
     imgEl.style.transition = "transform 1s ease, opacity 1s ease";
-    imgEl.style.transform = "translate(-150%, -150%) rotate(-15deg)";
+    imgEl.style.transform = "translate(-150%, -150%)";
     imgEl.style.opacity = "0";
 
     nameEl.style.transition = "transform 1s ease, opacity 1s ease";
@@ -266,5 +265,6 @@ function animateProduct() {
 }
 
 animateProduct();
+
 
 });
