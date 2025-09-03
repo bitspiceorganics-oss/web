@@ -203,16 +203,16 @@ body{
   }
 }
 
-body {
+/* Product Showcase Section */
+.product-showcase {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100vh; /* You can reduce this if you don’t want full page */
   margin: 0;
-  font-family: Arial, sans-serif;
   overflow: hidden;
 
-  /* 🌈 Animated Gradient Background */
+  /* 🌈 Animated Gradient Background only for this section */
   background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
