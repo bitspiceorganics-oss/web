@@ -206,42 +206,48 @@ document.addEventListener('DOMContentLoaded', ()=>{
     });
   }
 // === Product Showcase (Animated) ===
-const products = [
-  { name: "Cardamom", image: "trending-cardamom.jpg" },
-  { name: "Ghost Pepper", image: "trending-ghost-pepper.jpg" },
-  { name: "Joha Rice", image: "trending-joha-rice.jpg" },
-  { name: "Moringa Powder", image: "super-moringa.jpg" },
-  { name: "Split Black Gram", image: "new-blackgram2.jpg" },
-];
+// === Product Showcase (Animated) ===
+document.addEventListener("DOMContentLoaded", () => {
+  const products = [
+    { name: "Cardamom", image: "trending-cardamom.jpg" },
+    { name: "Ghost Pepper", image: "trending-ghost-pepper.jpg" },
+    { name: "Joha Rice", image: "trending-joha-rice.jpg" },
+    { name: "Moringa Powder", image: "super-moringa.jpg" },
+    { name: "Split Black Gram", image: "new-blackgram2.jpg" },
+  ];
 
-const imageEl = document.getElementById("product-image");
-const nameEl = document.getElementById("product-name");
+  const imageEl = document.getElementById("product-image");
+  const nameEl = document.getElementById("product-name");
 
-let current = 0;
+  if (!imageEl || !nameEl) {
+    console.warn("Product showcase elements not found in HTML");
+    return;
+  }
 
-function showProduct(index) {
-  const product = products[index];
-  imageEl.src = product.image;
-  nameEl.textContent = product.name;
+  let current = 0;
 
-  // Animate IN
-  imageEl.className = "image-in";
-  nameEl.className = "text-in";
+  function showProduct(index) {
+    const product = products[index];
+    imageEl.src = product.image;
+    nameEl.textContent = product.name;
 
-  setTimeout(() => {
-    // Animate OUT
-    imageEl.className = "image-out";
-    nameEl.className = "text-out";
-  }, 2000); // stays for 2 seconds
-}
+    // Animate IN
+    imageEl.className = "image-in";
+    nameEl.className = "text-in";
 
-function cycleProducts() {
-  showProduct(current);
-  current = (current + 1) % products.length;
-}
+    setTimeout(() => {
+      // Animate OUT
+      imageEl.className = "image-out";
+      nameEl.className = "text-out";
+    }, 2000); // stays visible for 2 seconds
+  }
 
-// Start showcase
-cycleProducts();
-setInterval(cycleProducts, 3000); // 2s visible + 1s transition
+  function cycleProducts() {
+    showProduct(current);
+    current = (current + 1) % products.length;
+  }
 
+  cycleProducts();
+  setInterval(cycleProducts, 3000); // 2s visible + 1s transition
+});
 });
