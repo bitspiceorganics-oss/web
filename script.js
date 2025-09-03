@@ -205,5 +205,41 @@ document.addEventListener('DOMContentLoaded', ()=>{
       });
     });
   }
+const products = [
+  { name: "Cardamom", image: "trending-cardamom.jpg" },
+  { name: "Ghost Pepper", image: "trending-ghost-pepper.jpg" },
+  { name: "Joha Rice", image: "trending-joha-rice.jpg" },
+  { name: "Moringa Powder", image: "super-moringa.jpg" },
+  { name: "Split Black Gram", image: "new-blackgram2.jpg" },
+];
+
+const imageEl = document.getElementById("product-image");
+const nameEl = document.getElementById("product-name");
+
+let current = 0;
+
+function showProduct(index) {
+  const product = products[index];
+  imageEl.src = product.image;
+  nameEl.textContent = product.name;
+
+  // Animate IN
+  imageEl.className = "image-in";
+  nameEl.className = "text-in";
+
+  setTimeout(() => {
+    // Animate OUT
+    imageEl.className = "image-out";
+    nameEl.className = "text-out";
+  }, 2000); // stays for 2s
+}
+
+function cycleProducts() {
+  showProduct(current);
+  current = (current + 1) % products.length;
+}
+
+cycleProducts();
+setInterval(cycleProducts, 3000); // 1s in + 2s stay + 1s out = 3s
 
 });
