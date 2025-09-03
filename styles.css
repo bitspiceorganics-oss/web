@@ -203,22 +203,18 @@ body{
   }
 }
 
-/* Product Showcase Section */
 .product-showcase {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* You can reduce this if you don’t want full page */
-  margin: 0;
-  overflow: hidden;
-
-  /* 🌈 Animated Gradient Background only for this section */
+  height: 70vh; /* adjust height */
   background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
+  overflow: hidden;
+  position: relative;
 }
 
-/* Animate gradient movement */
 @keyframes gradientBG {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -226,15 +222,15 @@ body{
 }
 
 .showcase {
-  position: relative;
   text-align: center;
+  position: relative;
 }
 
 .image-container {
-  position: relative;
   width: 220px;
   height: 220px;
   margin: 0 auto;
+  position: relative;
 }
 
 #product-image {
@@ -243,17 +239,25 @@ body{
   object-fit: contain;
   position: absolute;
   opacity: 0;
+  transition: all 1s ease;
 }
 
 .text-container {
   margin-top: 20px;
+  position: relative;
 }
 
 #product-name {
   font-size: 1.8rem;
-  position: absolute;
-  width: 100%;
   text-align: center;
   opacity: 0;
-  color: #fff; /* White for better contrast */
+  color: #fff;
+  transition: all 1s ease;
 }
+
+/* Animation classes */
+.image-in { opacity: 1; transform: translateX(0) translateY(0) rotate(0deg); }
+.image-out { opacity: 0; transform: translateX(200px) translateY(100px) rotate(30deg); }
+
+.text-in { opacity: 1; transform: translateX(0) translateY(0); }
+.text-out { opacity: 0; transform: translateX(-200px) translateY(100px); }
