@@ -205,6 +205,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
       });
     });
   }
+// === Product Showcase (Animated) ===
 const products = [
   { name: "Cardamom", image: "trending-cardamom.jpg" },
   { name: "Ghost Pepper", image: "trending-ghost-pepper.jpg" },
@@ -231,7 +232,7 @@ function showProduct(index) {
     // Animate OUT
     imageEl.className = "image-out";
     nameEl.className = "text-out";
-  }, 2000); // stays for 2s
+  }, 2000); // stays for 2 seconds
 }
 
 function cycleProducts() {
@@ -239,7 +240,8 @@ function cycleProducts() {
   current = (current + 1) % products.length;
 }
 
+// Start showcase
 cycleProducts();
-setInterval(cycleProducts, 3000); // 1s in + 2s stay + 1s out = 3s
+setInterval(cycleProducts, 3000); // 2s visible + 1s transition
 
 });
