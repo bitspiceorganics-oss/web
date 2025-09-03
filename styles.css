@@ -227,7 +227,7 @@ body{
   opacity: 0;
   top: 50%;
   left: 50%;
-  transform: translate(200%, -200%) rotate(0deg);
+  transform: translate(200%, -200%);
 }
 
 #product-name {
@@ -237,7 +237,7 @@ body{
   color: #fff;
   opacity: 0;
   white-space: nowrap;
-  top: 55%;
+  top: calc(50% + 150px); /* below image */
   left: 50%;
   transform: translateX(-200%);
 }
