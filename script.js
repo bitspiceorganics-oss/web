@@ -224,46 +224,45 @@ function animateProduct() {
   imgEl.src = product.img;
   nameEl.textContent = product.name;
 
+  // Reset positions
   imgEl.style.transition = "none";
   nameEl.style.transition = "none";
   imgEl.style.opacity = "0";
   nameEl.style.opacity = "0";
-  imgEl.style.transform = "translate(100%, -100%)";
-  nameEl.style.transform = "translateX(-100%)";
+  imgEl.style.transform = "translate(200%, -200%) rotate(0deg)";
+  nameEl.style.transform = "translateX(-200%)";
 
-  void imgEl.offsetWidth;
+  void imgEl.offsetWidth; // reflow
 
-  // Name slides in
+  // Animate name in
   setTimeout(() => {
-    nameEl.style.transition = "transform 1s ease, opacity 0.5s";
+    nameEl.style.transition = "transform 1s ease, opacity 1s ease";
     nameEl.style.opacity = "1";
-    nameEl.style.top = "50%";
-    nameEl.style.left = "10%";
-    nameEl.style.transform = "translateX(0)";
+    nameEl.style.transform = "translateX(-50%)"; // centered
   }, 200);
 
-  // Image comes in
+  // Animate image swinging to center
   setTimeout(() => {
-    imgEl.style.transition = "transform 1s ease, opacity 0.5s";
+    imgEl.style.transition = "transform 1s ease, opacity 1s ease";
     imgEl.style.opacity = "1";
-    imgEl.style.top = "30%";
-    imgEl.style.left = "50%";
-    imgEl.style.transform = "translate(-50%, -50%)";
-  }, 600);
+    imgEl.style.transform = "translate(-50%, -50%) rotate(0deg)";
+  }, 200);
 
-  // Pause then exit
+  // Pause 2s at center
   setTimeout(() => {
-    nameEl.style.transition = "transform 1s ease, opacity 0.5s";
-    nameEl.style.transform = "translateX(100%)";
-    nameEl.style.opacity = "0";
-
-    imgEl.style.transition = "transform 2s ease, opacity 0.5s";
-    imgEl.style.transform = "translate(-100%, -100%)";
+    // Animate exit - swing to left along semicircle
+    imgEl.style.transition = "transform 1s ease, opacity 1s ease";
+    imgEl.style.transform = "translate(-150%, -150%) rotate(-15deg)";
     imgEl.style.opacity = "0";
-  }, 3000);
 
+    nameEl.style.transition = "transform 1s ease, opacity 1s ease";
+    nameEl.style.transform = "translateX(150%)";
+    nameEl.style.opacity = "0";
+  }, 2200);
+
+  // Next product
   index = (index + 1) % products.length;
-  setTimeout(animateProduct, 5000);
+  setTimeout(animateProduct, 3500);
 }
 
 animateProduct();
