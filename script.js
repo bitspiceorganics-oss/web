@@ -206,48 +206,66 @@ document.addEventListener('DOMContentLoaded', ()=>{
     });
   }
 // === Product Showcase (Animated) ===
-// === Product Showcase (Animated) ===
-document.addEventListener("DOMContentLoaded", () => {
-  const products = [
-    { name: "Cardamom", image: "trending-cardamom.jpg" },
-    { name: "Ghost Pepper", image: "trending-ghost-pepper.jpg" },
-    { name: "Joha Rice", image: "trending-joha-rice.jpg" },
-    { name: "Moringa Powder", image: "super-moringa.jpg" },
-    { name: "Split Black Gram", image: "new-blackgram2.jpg" },
-  ];
+const products = [
+  { name: "Cardamom", img: "trending-cardamom.jpg" },
+  { name: "Ghost Pepper", img: "trending-ghost-pepper.jpg" },
+  { name: "Joha Rice", img: "trending-joha-rice.jpg" },
+  { name: "Moringa Powder", img: "super-moringa.jpg" },
+  { name: "Split Black Gram", img: "new-blackgram2.jpg" }
+];
 
-  const imageEl = document.getElementById("product-image");
-  const nameEl = document.getElementById("product-name");
+const imgEl = document.getElementById("product-img");
+const nameEl = document.getElementById("product-name");
 
-  if (!imageEl || !nameEl) {
-    console.warn("Product showcase elements not found in HTML");
-    return;
-  }
+let index = 0;
 
-  let current = 0;
+function animateProduct() {
+  const product = products[index];
+  imgEl.src = product.img;
+  nameEl.textContent = product.name;
 
-  function showProduct(index) {
-    const product = products[index];
-    imageEl.src = product.image;
-    nameEl.textContent = product.name;
+  imgEl.style.transition = "none";
+  nameEl.style.transition = "none";
+  imgEl.style.opacity = "0";
+  nameEl.style.opacity = "0";
+  imgEl.style.transform = "translate(100%, -100%)";
+  nameEl.style.transform = "translateX(-100%)";
 
-    // Animate IN
-    imageEl.className = "image-in";
-    nameEl.className = "text-in";
+  void imgEl.offsetWidth;
 
-    setTimeout(() => {
-      // Animate OUT
-      imageEl.className = "image-out";
-      nameEl.className = "text-out";
-    }, 2000); // stays visible for 2 seconds
-  }
+  // Name slides in
+  setTimeout(() => {
+    nameEl.style.transition = "transform 1s ease, opacity 0.5s";
+    nameEl.style.opacity = "1";
+    nameEl.style.top = "50%";
+    nameEl.style.left = "10%";
+    nameEl.style.transform = "translateX(0)";
+  }, 200);
 
-  function cycleProducts() {
-    showProduct(current);
-    current = (current + 1) % products.length;
-  }
+  // Image comes in
+  setTimeout(() => {
+    imgEl.style.transition = "transform 1s ease, opacity 0.5s";
+    imgEl.style.opacity = "1";
+    imgEl.style.top = "30%";
+    imgEl.style.left = "50%";
+    imgEl.style.transform = "translate(-50%, -50%)";
+  }, 600);
 
-  cycleProducts();
-  setInterval(cycleProducts, 3000); // 2s visible + 1s transition
-});
+  // Pause then exit
+  setTimeout(() => {
+    nameEl.style.transition = "transform 1s ease, opacity 0.5s";
+    nameEl.style.transform = "translateX(100%)";
+    nameEl.style.opacity = "0";
+
+    imgEl.style.transition = "transform 2s ease, opacity 0.5s";
+    imgEl.style.transform = "translate(-100%, -100%)";
+    imgEl.style.opacity = "0";
+  }, 3000);
+
+  index = (index + 1) % products.length;
+  setTimeout(animateProduct, 5000);
+}
+
+animateProduct();
+
 });
