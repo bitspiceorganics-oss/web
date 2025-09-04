@@ -207,8 +207,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
   }
 // === Product Showcase (Animated) ===
 const products = [
-  { name: "Cardamom", img: "cdm.jpg" },
-  { name: "Ghost Pepper", img: "ghp.jpg" },
+  { name: "Cardamom", img: "cdm.png" },
+  { name: "Ghost Pepper", img: "ghp.png" },
   { name: "Joha Rice", img: "trending-joha-rice.jpg" },
   { name: "Moringa Powder", img: "super-moringa.jpg" },
   { name: "Split Black Gram", img: "new-blackgram2.jpg" }
