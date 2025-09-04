@@ -209,9 +209,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
 const products = [
   { name: "Cardamom", img: "cdm.png" },
   { name: "Ghost Pepper", img: "ghp.png" },
-  { name: "Joha Rice", img: "trending-joha-rice.jpg" },
-  { name: "Moringa Powder", img: "super-moringa.jpg" },
-  { name: "Split Black Gram", img: "new-blackgram2.jpg" }
+  { name: "Joha Rice", img: "jha.png" },
+  { name: "Moringa Powder", img: "mp.png" },
+  { name: "Split Black Gram", img: "bgm.png" }
 ];
 
 const imgEl = document.getElementById("product-img");
